@@ -1,0 +1,43 @@
+buildscript {
+    repositories {
+        mavenCentral()
+
+    }
+    dependencies {
+        classpath "net.serenity-bdd:serenity-gradle-plugin:3.2.3"
+
+    }
+}
+
+plugins {
+    id 'java'
+    id "io.freefair.lombok" version "6.4.2"
+    id 'idea'
+    id "net.serenity-bdd.serenity-gradle-plugin" version "3.2.3"
+}
+
+group 'co.com.gaviota'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation group: 'net.serenity-bdd', name: 'serenity-core', version: '3.2.5'
+    implementation group: 'net.serenity-bdd', name: 'serenity-junit', version: '3.2.5'
+    implementation group: 'net.serenity-bdd', name: 'serenity-screenplay', version: '3.2.5'
+    testImplementation group: 'net.serenity-bdd', name: 'serenity-cucumber', version: '3.2.5'
+    implementation group: 'net.serenity-bdd', name: 'serenity-rest-assured', version: '3.2.5'
+    implementation group: 'net.serenity-bdd', name: 'serenity-screenplay-rest', version: '3.2.5'
+    implementation group: 'com.google.code.gson', name: 'gson', version: '2.9.1'
+    compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.24'
+    testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.8.2'
+    testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: '5.8.2'
+    testImplementation group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.36'
+
+}
+
+test {
+    useJUnitPlatform()
+}
